@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | xbcq</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #F4C117;
+            --on-primary: #1F1B16;
+            --surface: #1A1A1A;
+            --surface-container: #24231F;
+            --outline: #69665C;
+            --elevation-1: 0 2px 4px rgba(249, 235, 76, 0.1);
+            --elevation-2: 0 4px 8px rgba(249, 235, 76, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background: var(--surface);
+            color: white;
+            min-height: 100vh;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--surface);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--outline);
+            z-index: 1000;
+            box-shadow: black/*var(--elevation-1);*/
+        }
+
+        nav .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 2rem;
+            border: 1px solid color-mix(in srgb, var(--primary) 30%, transparent);
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            background: color-mix(in srgb, var(--primary) 15%, transparent);
+        }
+      
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            position: relative;
+            margin-top: -76px;
+            padding-top: 140px;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, 
+                color-mix(in srgb, var(--primary) 8%, transparent),
+                transparent 70%);
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin: 1.5rem 0;
+        }
+
+        .project-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: var(--surface-container);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid color-mix(in srgb, var(--primary) 15%, transparent);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--elevation-2);
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            background: color-mix(in srgb, var(--primary) 10%, transparent);
+            border: 1px solid color-mix(in srgb, var(--primary) 20%, transparent);
+            margin: 0.5rem;
+        }
+
+        .discord-btn {
+            background: none;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            margin-top: 2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .discord-btn:hover {
+            background: color-mix(in srgb, var(--primary) 15%, transparent);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <ul>
+                <li><h3>Xbcq</h3></li>
+                <li><a href="./obfuscator">Obfuscator</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <div style="margin: 1.5rem 0">
+                <span class="pill">JavaScript Expert</span>
+                <span class="pill">Lua Developer</span>
+                <span class="pill">Web Design</span>
+            </div>
+            <p style="color: var(--outline)">
+                xbcq · Discord: xbcq
+            </p>
+        </div>
+    </section>
+
+    <section class="container" id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Interactive Dashboard</h3>
+                <p style="color: var(--outline)">Real-time data visualization built with JavaScript</p>
+                <div style="margin-top: 1rem">
+                    <span class="pill">JavaScript</span>
+                    <span class="pill">CSS3</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Game Mod Framework</h3>
+                <p style="color: var(--outline)">Lua-based game modification system</p>
+                <div style="margin-top: 1rem">
+                    <span class="pill">Lua</span>
+                    <span class="pill">C++</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="container" id="contact" style="text-align: center; margin: 4rem 0">
+        <button class="discord-btn" onclick="navigator.clipboard.writeText('xbcq')">
+            📬 Copy Discord ID
+        </button>
+    </section>
+</body>
+</html>
